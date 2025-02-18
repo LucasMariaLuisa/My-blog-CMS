@@ -369,6 +369,66 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiPaginaGaleriaPaginaGaleria extends Struct.SingleTypeSchema {
+  collectionName: 'pagina_galerias';
+  info: {
+    description: '';
+    displayName: 'Pagina-Galeria';
+    pluralName: 'pagina-galerias';
+    singularName: 'pagina-galeria';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    carrosselFotos: Schema.Attribute.DynamicZone<['sections.carrossel-fotos']>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::pagina-galeria.pagina-galeria'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    tituloPagina: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPaginaHomePaginaHome extends Struct.SingleTypeSchema {
+  collectionName: 'pagina_homes';
+  info: {
+    description: '';
+    displayName: 'Pagina-Home';
+    pluralName: 'pagina-homes';
+    singularName: 'pagina-home';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    banner: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::pagina-home.pagina-home'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    tituloPagina: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -878,6 +938,8 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::pagina-galeria.pagina-galeria': ApiPaginaGaleriaPaginaGaleria;
+      'api::pagina-home.pagina-home': ApiPaginaHomePaginaHome;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

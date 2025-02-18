@@ -1,0 +1,29 @@
+{
+  "kind": "singleType",
+  "collectionName": "pagina_homes",
+  "info": {
+    "singularName": "pagina-home",
+    "pluralName": "pagina-homes",
+    "displayName": "Pagina-Home",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "tituloPagina": {
+      "type": "string"
+    },
+    "banner": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

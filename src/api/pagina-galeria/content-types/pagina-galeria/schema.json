@@ -1,0 +1,24 @@
+{
+  "kind": "singleType",
+  "collectionName": "pagina_galerias",
+  "info": {
+    "singularName": "pagina-galeria",
+    "pluralName": "pagina-galerias",
+    "displayName": "Pagina-Galeria",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "tituloPagina": {
+      "type": "string"
+    },
+    "carrosselFotos": {
+      "type": "dynamiczone",
+      "components": [
+        "sections.carrossel-fotos"
+      ]
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_sections_carrossel_fotos",
+  "info": {
+    "displayName": "Carrossel-fotos",
+    "icon": "chartBubble",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "tituloCarrossel": {
+      "type": "string"
+    },
+    "carrosselFotos": {
+      "type": "component",
+      "repeatable": true,
+      "component": "component.foto"
+    }
+  }
+}

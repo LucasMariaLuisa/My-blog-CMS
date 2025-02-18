@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_component_fotos",
+  "info": {
+    "displayName": "foto",
+    "icon": "monitor"
+  },
+  "options": {},
+  "attributes": {
+    "foto": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "legenda": {
+      "type": "string"
+    }
+  }
+}
